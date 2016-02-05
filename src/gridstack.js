@@ -531,6 +531,9 @@
         if (elements && elements.length) {
             eventParams.push(elements);
             hasChanges = true;
+            for (var i = 0; i < elements.length; i++) {
+                elements[i].el.trigger('itemChanged');
+            };
         }
 
         if (hasChanges || forceTrigger === true) {
